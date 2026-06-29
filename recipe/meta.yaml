@@ -1,6 +1,6 @@
 {% set name = "cuda-cccl" %}
 {% set version = "13.3.3.4.1" %}
-{% set cccl_version = "3.3.3" %}
+{% set cccl_version = "3.3.4" %}
 {% set cuda_version = "13.3" %}
 {% set platform = "linux-x86_64" %}  # [linux64]
 {% set platform = "linux-ppc64le" %}  # [ppc64le]
