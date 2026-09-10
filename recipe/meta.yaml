@@ -36,7 +36,11 @@ package:
 
 source:
   url: https://developer.download.nvidia.com/compute/cuda/redist/cccl/{{ platform }}/cccl-{{ platform }}-{{ version }}-archive.{{ extension }}
-  sha256: {{ sha256 }}
+  # Only the platforms with a published hash get the key. A variant with no matching
+  # assignment above (ppc64le, tegra) would otherwise render an empty sha256, which
+  # conda-build rejects -- breaking `conda smithy rerender` even though no such
+  # config is ever built.
+  sha256: {{ sha256 }}  # [linux64 or (aarch64 and arm_variant_type=="sbsa") or win]
 
 build:
   number: 0
