@@ -46,31 +46,73 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `cuda-cccl, cuda-cccl_linux-64` can be installed with `conda`:
+How to use
+----------
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda install cuda-cccl cuda-cccl_linux-64
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba install cuda-cccl cuda-cccl_linux-64
 ```
 
-It is possible to list all of the versions of `cuda-cccl` available on your platform with `conda`:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+# for adding to your local project
+pixi add cuda-cccl cuda-cccl_linux-64
+# for installing globally
+pixi global install cuda-cccl cuda-cccl_linux-64
+```
+
+</details>
+
+Search package versions
+-----------------------
+
+It is possible to list all of the versions of `cuda-cccl` available on your platform:
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda search cuda-cccl --channel conda-forge
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba search cuda-cccl --channel conda-forge
 ```
 
-Alternatively, `mamba repoquery` may provide more information:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+pixi search cuda-cccl --channel conda-forge
+```
+
+</details>
+
+<details>
+<summary>With mamba repoquery, which may provide more information</summary>
 
 ```
 # Search all versions available on your platform:
@@ -82,6 +124,8 @@ mamba repoquery whoneeds cuda-cccl --channel conda-forge
 # List dependencies of `cuda-cccl`:
 mamba repoquery depends cuda-cccl --channel conda-forge
 ```
+
+</details>
 
 
 About conda-forge
