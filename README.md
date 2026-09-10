@@ -35,6 +35,7 @@ Current release info
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-cuda--cccl-green.svg)](https://anaconda.org/conda-forge/cuda-cccl) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/cuda-cccl.svg)](https://anaconda.org/conda-forge/cuda-cccl) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/cuda-cccl.svg)](https://anaconda.org/conda-forge/cuda-cccl) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/cuda-cccl.svg)](https://anaconda.org/conda-forge/cuda-cccl) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-cuda--cccl__linux--64-green.svg)](https://anaconda.org/conda-forge/cuda-cccl_linux-64) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/cuda-cccl_linux-64.svg)](https://anaconda.org/conda-forge/cuda-cccl_linux-64) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/cuda-cccl_linux-64.svg)](https://anaconda.org/conda-forge/cuda-cccl_linux-64) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/cuda-cccl_linux-64.svg)](https://anaconda.org/conda-forge/cuda-cccl_linux-64) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-cuda--cccl__win--arm64-green.svg)](https://anaconda.org/conda-forge/cuda-cccl_win-arm64) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/cuda-cccl_win-arm64.svg)](https://anaconda.org/conda-forge/cuda-cccl_win-arm64) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/cuda-cccl_win-arm64.svg)](https://anaconda.org/conda-forge/cuda-cccl_win-arm64) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/cuda-cccl_win-arm64.svg)](https://anaconda.org/conda-forge/cuda-cccl_win-arm64) |
 
 Installing cuda-cccl-split
 ==========================
@@ -53,7 +54,7 @@ How to use
 <summary>With conda</summary>
 
 ```
-conda install cuda-cccl cuda-cccl_linux-64
+conda install cuda-cccl cuda-cccl_linux-64 cuda-cccl_win-arm64
 ```
 
 </details>
@@ -62,7 +63,7 @@ conda install cuda-cccl cuda-cccl_linux-64
 <summary>With mamba</summary>
 
 ```
-mamba install cuda-cccl cuda-cccl_linux-64
+mamba install cuda-cccl cuda-cccl_linux-64 cuda-cccl_win-arm64
 ```
 
 </details>
@@ -72,9 +73,9 @@ mamba install cuda-cccl cuda-cccl_linux-64
 
 ```
 # for adding to your local project
-pixi add cuda-cccl cuda-cccl_linux-64
+pixi add cuda-cccl cuda-cccl_linux-64 cuda-cccl_win-arm64
 # for installing globally
-pixi global install cuda-cccl cuda-cccl_linux-64
+pixi global install cuda-cccl cuda-cccl_linux-64 cuda-cccl_win-arm64
 ```
 
 </details>
