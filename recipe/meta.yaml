@@ -86,7 +86,7 @@ outputs:
       noarch: generic
     files:
       - targets  # [linux]
-      - Library\lib\x64\cmake                      # [win]
+      - Library\lib\{{ target_name }}\cmake        # [win]
       - Library\include\targets\{{ target_name }}  # [win]
     requirements:
       build:
