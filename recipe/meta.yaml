@@ -43,19 +43,12 @@ source:
   sha256: {{ sha256 }}  # [linux64 or (aarch64 and arm_variant_type=="sbsa") or win]
 
 build:
-  number: 1
+  number: 2
   skip: true  # [osx or ppc64le]
 
 outputs:
   - name: cuda-cccl
     build:
-      # This metapackage exists to pin `cccl` and `cuda-cccl_{{ target_platform }}` to
-      # consistent versions, but conda-forge has no win-arm64 build of `cccl` -- and
-      # cannot have one yet, since cccl's own recipe needs cuda-nvcc and libcurand-dev
-      # for win-arm64, both of which ship in this release. Without this skip the whole
-      # win-arm64 job fails and cuda-cccl_win-arm64 never uploads, which is what would
-      # let cccl be built in the first place. Drop this once cccl publishes win-arm64.
-      skip: true  # [win and arm64]
     requirements:
       build:
         - arm-variant * {{ arm_variant_type }}  # [aarch64]
