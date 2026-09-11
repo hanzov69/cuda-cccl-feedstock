@@ -48,7 +48,6 @@ build:
 
 outputs:
   - name: cuda-cccl
-    build:
     requirements:
       build:
         - arm-variant * {{ arm_variant_type }}  # [aarch64]
