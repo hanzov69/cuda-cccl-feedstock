@@ -56,7 +56,7 @@ outputs:
       run:
         - {{ pin_compatible("cuda-version", max_pin="x.x") }}
         - cuda-cccl_{{ target_platform }} =={{ version }}
-        - cccl =={{ cccl_version }}
+        #- cccl =={{ cccl_version }}
         - arm-variant * {{ arm_variant_type }}  # [aarch64]
     test:
       requires:
