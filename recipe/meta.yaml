@@ -1,5 +1,5 @@
 {% set name = "cuda-cccl" %}
-{% set version = "13.3.4.2.1" %}
+{% set version = "13.3.4.3.1" %}
 {% set cuda_version = "13.4" %}
 {% set platform = "linux-x86_64" %}  # [linux64]
 {% set platform = "linux-sbsa" %}  # [aarch64 and arm_variant_type=="sbsa"]
@@ -19,11 +19,11 @@
 {% set minor = load_file_regex(load_file="lib/cmake/cccl/cccl-config-version.cmake", regex_pattern="CCCL_VERSION_MINOR[ \t]+([0-9]+)") %}
 {% set patch = load_file_regex(load_file="lib/cmake/cccl/cccl-config-version.cmake", regex_pattern="CCCL_VERSION_PATCH[ \t]+([0-9]+)") %}
 {% set cccl_version = (major.group(1) ~ "." ~ minor.group(1) ~ "." ~ patch.group(1)) if major else "0.0.0" %}
-{% set sha256 = "7c973e70d8f8d732f801fe2297c9cb5a541f22824fa6ad64ac4f0e183f9c4397" %}  # [linux64]
-{% set sha256 = "36fe2aa9e58a6c924c609e41b466d4ec5c7f66db2f171a7b0ecdd8482274213e" %}  # [aarch64 and arm_variant_type=="sbsa"]
+{% set sha256 = "6b7516074f42f80dd3feb9c11318c8e1c5ab56cdd9f18fff4c5ace2e7e0a8209" %}  # [linux64]
+{% set sha256 = "e36cc409c7ef4c3da18f0dd7f301b0df826121924cf817a7ff2ae508c944c6a1" %}  # [aarch64 and arm_variant_type=="sbsa"]
 #{% set sha256 = "296248ed702ea9e1a5e43c367d7a09a9ce2fda8a8c21101c428ea79eecf1a46c" %}  # [aarch64 and arm_variant_type=="tegra"]
-{% set sha256 = "ea3ebdd98d4d98819cc26b66bc5a0931004ed35ff18eea8b93e0bd2c8bfa5d7c" %}  # [win64]
-{% set sha256 = "e8a7c96268ae6c52a7b8b07d96e1f84ab8eae5619c3b989024ce712dda5c2cc2" %}  # [win and arm64]
+{% set sha256 = "17d0ca1592c0dfc974a5fc39f470a6b7bae40da239e3e19bd0752017735acbca" %}  # [win64]
+{% set sha256 = "e298fc4546a889a4d8329657eac567d93a082c0480d7c9b23690d28d8753d21d" %}  # [win and arm64]
 
 # CUDA C++ Core Libraries (CCCL) includes thrust, cub, and libcudacxx. These are header-only libraries.
 # The cccl package ships CCCL headers in the environment's include directory for use in downstream recipes that require CCCL. It follows CCCL upstream versioning. Use this package to say, "I want a specific version of CCCL headers when building my package (which may be newer than the versions shipped in the latest CUDA Toolkit)."
@@ -43,7 +43,7 @@ source:
   sha256: {{ sha256 }}  # [linux64 or (aarch64 and arm_variant_type=="sbsa") or win]
 
 build:
-  number: 2
+  number: 0
   skip: true  # [osx or ppc64le]
 
 outputs:
