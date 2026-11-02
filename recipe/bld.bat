@@ -11,3 +11,5 @@ mkdir %LIBRARY_INC%\targets\%CUDA_ARCH%
 
 xcopy /E /I /Y lib\cmake "%LIBRARY_LIB%\%CUDA_ARCH%\cmake"
 xcopy /E /I /Y include\* "%LIBRARY_INC%\targets\%CUDA_ARCH%"
+
+powershell -NoProfile -ExecutionPolicy Bypass -File "%RECIPE_DIR%\fix-header-search.ps1" %CUDA_ARCH%

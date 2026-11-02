@@ -43,7 +43,7 @@ source:
   sha256: {{ sha256 }}  # [linux64 or (aarch64 and arm_variant_type=="sbsa") or win]
 
 build:
-  number: 0
+  number: 1
   skip: true  # [osx or ppc64le]
 
 outputs:
