@@ -1,0 +1,36 @@
+diff --git a/lib/cmake/thrust/thrust-header-search.cmake b/lib/cmake/thrust/thrust-header-search.cmake
+--- a/lib/cmake/thrust/thrust-header-search.cmake
++++ b/lib/cmake/thrust/thrust-header-search.cmake
+@@ -9,6 +9,8 @@ find_path(_THRUST_VERSION_INCLUDE_DIR thrust/version.h
+   NO_CMAKE_FIND_ROOT_PATH # Don't allow CMake to re-root the search
+   NO_DEFAULT_PATH # Only search explicit paths below:
+   PATHS
++    "${CMAKE_CURRENT_LIST_DIR}/../../../../include/targets/arm64"
++    "${CMAKE_CURRENT_LIST_DIR}/../../../../include/targets/arm64/cccl"
+     "${CMAKE_CURRENT_LIST_DIR}/${from_install_prefix}/include"
+     "${CMAKE_CURRENT_LIST_DIR}/${from_install_prefix}/include/cccl"
+ )
+diff --git a/lib/cmake/cub/cub-header-search.cmake b/lib/cmake/cub/cub-header-search.cmake
+--- a/lib/cmake/cub/cub-header-search.cmake
++++ b/lib/cmake/cub/cub-header-search.cmake
+@@ -9,6 +9,8 @@ find_path(_CUB_VERSION_INCLUDE_DIR cub/version.cuh
+   NO_CMAKE_FIND_ROOT_PATH # Don't allow CMake to re-root the search
+   NO_DEFAULT_PATH # Only search explicit paths below:
+   PATHS
++    "${CMAKE_CURRENT_LIST_DIR}/../../../../include/targets/arm64"
++    "${CMAKE_CURRENT_LIST_DIR}/../../../../include/targets/arm64/cccl"
+     "${CMAKE_CURRENT_LIST_DIR}/${from_install_prefix}/include"
+     "${CMAKE_CURRENT_LIST_DIR}/${from_install_prefix}/include/cccl"
+ )
+diff --git a/lib/cmake/libcudacxx/libcudacxx-header-search.cmake b/lib/cmake/libcudacxx/libcudacxx-header-search.cmake
+--- a/lib/cmake/libcudacxx/libcudacxx-header-search.cmake
++++ b/lib/cmake/libcudacxx/libcudacxx-header-search.cmake
+@@ -9,6 +9,8 @@ find_path(_libcudacxx_VERSION_INCLUDE_DIR cuda/std/detail/__config
+   NO_CMAKE_FIND_ROOT_PATH # Don't allow CMake to re-root the search
+   NO_DEFAULT_PATH # Only search explicit paths below:
+   PATHS
++    "${CMAKE_CURRENT_LIST_DIR}/../../../../include/targets/arm64"
++    "${CMAKE_CURRENT_LIST_DIR}/../../../../include/targets/arm64/cccl"
+     "${CMAKE_CURRENT_LIST_DIR}/${from_install_prefix}/include"
+     "${CMAKE_CURRENT_LIST_DIR}/${from_install_prefix}/include/cccl"
+ )

@@ -41,6 +41,12 @@ source:
   # conda-build rejects -- breaking `conda smithy rerender` even though no such
   # config is ever built.
   sha256: {{ sha256 }}  # [linux64 or (aarch64 and arm_variant_type=="sbsa") or win]
+  patches:
+    # The CMake *-header-search.cmake files look for headers in the Linux layout
+    # (<prefix>/include{,/cccl}), but on Windows bld.bat installs them under
+    # Library/include/targets/<arch>. Add that location to the find_path() search list.
+    - patches/win-header-search-x64.patch  # [win64]
+    - patches/win-header-search-arm64.patch  # [win and arm64]
 
 build:
   number: 1
